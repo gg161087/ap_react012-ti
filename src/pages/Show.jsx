@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { VStack, Box, Text, Divider, Button} from '@chakra-ui/react'
+import { VStack, Box, Text, Divider, Button, Center} from '@chakra-ui/react'
 import { Header } from './../partials/Header.jsx'
 import { Footer } from './../partials/Footer.jsx'
 import { TaskList } from './../components/TaskList.jsx'
@@ -42,6 +42,7 @@ export const Show = () => {
         
             <Header/>
             <VStack bg="#9A71C9" h='max-content' p='10rem'>
+
                 <Box bg='#FFFFFF' p='2rem' borderRadius='1rem'>
                     <Box display='flex' flexDirection='row' w='100%'>
                         <Box w='50%' display='flex' justifyContent='center' p='1rem'>
@@ -53,18 +54,23 @@ export const Show = () => {
                         </Box>
                     </Box>
                     <Divider></Divider>
+                    <Center>
                     <TaskList
                         tasks={tasks}
                         onTaskComplete={handleTaskComplete}
                         onTaskDelete={handleTaskDelete}
                     />
+                    </Center>
                     <Box display='flex' justifyContent='center' alignItems='center' textAlign='center'>
-                        <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='30px' textAlign='center' fontSize='3rem'>
-                            <i class="fa-solid fa-plus"></i>
-                        </Button>
+
                          <TaskForm onTaskAdd={handleTaskAdd} /> 
+
                     </Box>
+
                 </Box>
+                <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px'>
+                            <i class="fa-solid fa-plus"></i>
+                </Button>
             </VStack>
             <Footer/>
         </>

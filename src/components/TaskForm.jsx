@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useToast,Box,Button} from '@chakra-ui/react'
+import { useToast,Box,Button,Input} from '@chakra-ui/react'
 import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 
 export const TaskForm = ({ onTaskAdd }) => {
@@ -42,8 +42,8 @@ export const TaskForm = ({ onTaskAdd }) => {
 
     return (
         <form onSubmit={handleFormSubmit}>
-            <input type="text" value={taskName} onChange={handleInputChange} />
-            <Button type="submit">Add Task</Button>
+            <Input type="text" value={taskName} onChange={handleInputChange} variant='outline' placeholder='Add your task'  width="100px"/>
+            <Button type="submit" colorScheme='teal' variant='solid'>Add Task</Button>
         </form>
     );
 };

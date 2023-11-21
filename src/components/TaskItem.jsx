@@ -24,7 +24,7 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
                     {task.name}            
                 </Text>
             </Button>
-            <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleDelete} colorScheme='red'>Delete</Button>
         </Box>
 
     );
