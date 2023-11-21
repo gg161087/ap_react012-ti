@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Text, Box, Button } from '@chakra-ui/react'
+import { Text, Box, Button, Center } from '@chakra-ui/react'
 
 export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
 
@@ -15,6 +15,7 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
     };
 
     return (
+        <Center>
         <Box display='flex' flexDirection='row' gap='2rem'>
             <Button onClick={handleComplete} bg='none' gap='1rem'>
                 <Text color='#B484C7'>
@@ -26,6 +27,6 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
             </Button>
             <Button onClick={handleDelete} colorScheme='red'>Delete</Button>
         </Box>
-
+        </Center>
     );
 };

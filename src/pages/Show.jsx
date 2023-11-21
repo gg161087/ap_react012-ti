@@ -7,6 +7,10 @@ import { TaskForm } from './../components/TaskForm.jsx'
 
 export const Show = () => {
     const [tasks, setTasks] = useState([]);
+    const [isFormVisible, setFormVisible] = useState(false);
+    const handleButtonClick = () => {
+        setFormVisible(!isFormVisible);
+    }
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -61,14 +65,16 @@ export const Show = () => {
                         onTaskDelete={handleTaskDelete}
                     />
                     </Center>
+                    {isFormVisible && (
+                        <Center>
                     <Box display='flex' justifyContent='center' alignItems='center' textAlign='center'>
-
-                         <TaskForm onTaskAdd={handleTaskAdd} /> 
-
+                        <TaskForm onTaskAdd={handleTaskAdd} /> 
                     </Box>
+                    </Center>
+                )}
 
                 </Box>
-                <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px'>
+                <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px' onClick={handleButtonClick}>
                             <i class="fa-solid fa-plus"></i>
                 </Button>
             </VStack>
