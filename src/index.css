@@ -15,5 +15,7 @@ body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
+  background: rgb(2,0,36);
+  background: linear-gradient(320deg, rgba(2,0,36,1) 0%, rgba(154,113,201,1) 70%, rgba(0,212,255,1) 100%);
 }

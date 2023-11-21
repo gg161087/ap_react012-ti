@@ -43,10 +43,8 @@ export const Show = () => {
 
     return (
         <>
-        
             <Header/>
-            <VStack bg="#9A71C9" h='max-content' p='10rem'>
-
+            <VStack h='max-content' p='10rem'>
                 <Box bg='#FFFFFF' p='2rem' borderRadius='1rem'>
                     <Box display='flex' flexDirection='row' w='100%'>
                         <Box w='50%' display='flex' justifyContent='center' p='1rem'>
