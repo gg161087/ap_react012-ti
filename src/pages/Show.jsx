@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { VStack, Box, Text, Divider, Button, Center} from '@chakra-ui/react'
+import { HStack, Box, Text, Button, Center, Tabs, Tab, TabPanels, TabPanel, TabList } from '@chakra-ui/react'
 import { Header } from './../partials/Header.jsx'
 import { Footer } from './../partials/Footer.jsx'
 import { TaskList } from './../components/TaskList.jsx'
@@ -43,40 +43,54 @@ export const Show = () => {
 
     return (
         <>
-            <Header/>
-            <VStack h='max-content' p='10rem'>
-                <Box bg='#FFFFFF' p='2rem' borderRadius='1rem'>
-                    <Box display='flex' flexDirection='row' w='100%'>
-                        <Box w='50%' display='flex' justifyContent='center' p='1rem'>
-                            <i class="fa-solid fa-list"></i>
-                        </Box>
-                        <Divider h='4rem' orientation='vertical'></Divider> 
-                        <Box w='50%' display='flex' justifyContent='center' p='1rem'>
-                            <i class="fa-regular fa-calendar-check"></i>
-                        </Box>
-                    </Box>
-                    <Divider></Divider>
-                    <Center>
-                    <TaskList
-                        tasks={tasks}
-                        onTaskComplete={handleTaskComplete}
-                        onTaskDelete={handleTaskDelete}
-                    />
-                    </Center>
-                    {isFormVisible && (
-                        <Center>
-                    <Box display='flex' justifyContent='center' alignItems='center' textAlign='center'>
-                        <TaskForm onTaskAdd={handleTaskAdd} /> 
-                    </Box>
-                    </Center>
-                )}
-
-                </Box>
-                <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px' onClick={handleButtonClick}>
-                            <i class="fa-solid fa-plus"></i>
-                </Button>
-            </VStack>
-            <Footer/>
+            <Header />
+            <HStack justifyContent='center'>
+                <Tabs variant='enclosed' w='30rem' bg='white' borderRadius={'1rem'}>
+                    <TabList>
+                        <Tab w='50%' borderRadius={'1rem'}>
+                            <Box display='flex' justifyContent='center' p='1rem'>
+                                <i className="fa-solid fa-list"></i>
+                            </Box>
+                        </Tab>
+                        <Tab w='50%' borderRadius={'1rem'}>
+                            <Box display='flex' justifyContent='center' p='1rem'>
+                                <i className="fa-regular fa-calendar-check"></i>
+                            </Box>
+                        </Tab>
+                    </TabList>
+                    <TabPanels>
+                        <TabPanel>
+                            <Center>
+                                <TaskList
+                                    tasks={tasks}
+                                    onTaskComplete={handleTaskComplete}
+                                    onTaskDelete={handleTaskDelete}
+                                />
+                            </Center>
+                            {isFormVisible &&
+                                <Center>
+                                    <Box display='flex' justifyContent='center' alignItems='center' textAlign='center'>
+                                        <TaskForm onTaskAdd={handleTaskAdd} />
+                                    </Box>
+                                </Center>
+                            }
+                        </TabPanel>
+                        <TabPanel>
+                            <Center>
+                                <TaskList
+                                    tasks={tasks}
+                                    onTaskComplete={handleTaskComplete}
+                                    onTaskDelete={handleTaskDelete}
+                                />
+                            </Center>                            
+                        </TabPanel>
+                    <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px' onClick={handleButtonClick}>
+                            <i className="fa-solid fa-plus"></i>
+                    </Button>                   
+                    </TabPanels>
+                </Tabs>
+            </HStack>
+            <Footer />
         </>
     )
 }
