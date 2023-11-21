@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { VStack, Box, Text, Divider, Button } from '@chakra-ui/react'
-
+import { VStack, Box, Text, Divider, Button} from '@chakra-ui/react'
 import { Header } from './../partials/Header.jsx'
 import { Footer } from './../partials/Footer.jsx'
 import { TaskList } from './../components/TaskList.jsx'
@@ -8,7 +7,6 @@ import { TaskForm } from './../components/TaskForm.jsx'
 
 export const Show = () => {
     const [tasks, setTasks] = useState([]);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -41,7 +39,8 @@ export const Show = () => {
 
     return (
         <>
-            <Header></Header>
+        
+            <Header/>
             <VStack bg="#9A71C9" h='max-content' p='10rem'>
                 <Box bg='#FFFFFF' p='2rem' borderRadius='1rem'>
                     <Box display='flex' flexDirection='row' w='100%'>
@@ -63,11 +62,11 @@ export const Show = () => {
                         <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='30px' textAlign='center' fontSize='3rem'>
                             <i class="fa-solid fa-plus"></i>
                         </Button>
-                        {/* <TaskForm onTaskAdd={handleTaskAdd} /> */}
+                         <TaskForm onTaskAdd={handleTaskAdd} /> 
                     </Box>
                 </Box>
             </VStack>
-            <Footer></Footer>
+            <Footer/>
         </>
     )
 }
