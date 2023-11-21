@@ -47,12 +47,12 @@ export const Show = () => {
             <HStack justifyContent='center'>
                 <Tabs variant='enclosed' w='30rem' bg='white' borderRadius={'1rem'}>
                     <TabList>
-                        <Tab w='50%' borderRadius={'1rem'}>
+                        <Tab w='50%' borderTopLeftRadius='1rem'>
                             <Box display='flex' justifyContent='center' p='1rem'>
                                 <i className="fa-solid fa-list"></i>
                             </Box>
                         </Tab>
-                        <Tab w='50%' borderRadius={'1rem'}>
+                        <Tab w='50%' borderTopRightRadius='1rem'>
                             <Box display='flex' justifyContent='center' p='1rem'>
                                 <i className="fa-regular fa-calendar-check"></i>
                             </Box>
@@ -84,9 +84,20 @@ export const Show = () => {
                                 />
                             </Center>                            
                         </TabPanel>
-                    <Button colorScheme='green' borderRadius='3rem'width='50px' height='50px' p='20px' textAlign='center' fontSize='3rem' position='absolute' bottom='190px' onClick={handleButtonClick}>
-                            <i className="fa-solid fa-plus"></i>
-                    </Button>                   
+                        <Box display='flex' justifyContent='center' position='relative' minH='2.5rem'>
+                            <Button 
+                                colorScheme='green' 
+                                borderRadius='3rem'
+                                position='absolute' 
+                                width='50px' 
+                                height='50px' 
+                                p='20px' 
+                                textAlign='center' 
+                                fontSize='3rem' 
+                                onClick={handleButtonClick}>
+                                    <i className="fa-solid fa-plus"></i>
+                            </Button>
+                        </Box>
                     </TabPanels>
                 </Tabs>
             </HStack>
