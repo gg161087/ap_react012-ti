@@ -25,8 +25,10 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
       <Box
         display='flex'
         flexDirection='row'
+        alignItems={"center"}
         p='0 1rem'
         minW={"30rem"}
+        minH={"50px"}
         justifyContent='space-between'>
         <Button onClick={handleComplete} bg='none'>
           <Text color='#B484C7'>
@@ -36,7 +38,10 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
               <i className='fa-regular fa-square'></i>
             )}
           </Text>
-          <Text textDecoration={isCompleted ? "line-through" : "none"}>
+          <Text
+            textDecoration={isCompleted ? "line-through" : "none"}
+            fontSize='xl'
+            marginLeft='10px'>
             {task.name}
           </Text>
         </Button>
