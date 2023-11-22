@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Text, Box, Button, Center } from '@chakra-ui/react'
 
 export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
+    console.log(task);
 
     const [isCompleted, setIsCompleted] = useState(false);
+
+    useEffect(() =>{
+        setIsCompleted(task.completed)    
+    },[])
 
     const handleComplete = () => {
         setIsCompleted(!isCompleted);
@@ -16,10 +21,10 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
 
     return (
         <Center>
-        <Box display='flex' flexDirection='row' gap='2rem'>
-            <Button onClick={handleComplete} bg='none' gap='1rem'>
+        <Box display='flex' flexDirection='row' p='0 1rem' minW={'30rem'} justifyContent='space-between'>
+            <Button onClick={handleComplete} bg='none'>
                 <Text color='#B484C7'>
-                    {isCompleted ? <i class="fa-regular fa-square-check"></i> : <i class="fa-regular fa-square"></i>}           
+                    {isCompleted ? <i className="fa-regular fa-square-check"></i> : <i className="fa-regular fa-square"></i>}           
                 </Text>                 
                 <Text textDecoration={isCompleted ? 'line-through' : 'none'}>
                     {task.name}            
