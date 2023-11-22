@@ -67,7 +67,7 @@ export const Show = () => {
             </Box>
           </Tab>
         </TabList>
-        <TabPanels>
+        <TabPanels >
           <TabPanel>
             <Center>
               <TaskList
