@@ -67,7 +67,7 @@ export const Show = () => {
             </Box>
           </Tab>
         </TabList>
-        <TabPanels >
+        <TabPanels>
           <TabPanel>
             <Center>
               <TaskList
@@ -99,11 +99,11 @@ export const Show = () => {
             position='relative'
             minH='2.5rem'>
             <Button
-              colorScheme='green'
+              colorScheme='orange'
               borderRadius='3rem'
               position='absolute'
-              width='50px'
-              height='50px'
+              width='60px'
+              height='60px'
               p='20px'
               textAlign='center'
               fontSize='3rem'
