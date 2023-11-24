@@ -26,14 +26,11 @@ export const Show = () => {
         setFormVisible(!isFormVisible);
     };
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("database/tasks.json");
-                const data = await response.json();
-                setTasks(data);
-                console.log("Tasks updated:", tasks);
-            } catch (error) {
-                console.error("Error fetching data:", error);
+        const fetchData = () => {
+            let localStorageTasks = localStorage.getItem("tasks")
+            if (localStorageTasks) {
+                let arraytasks = Array.from(JSON.parse(localStorageTasks));
+                setTasks(arraytasks)                
             }
         };
         fetchData();
@@ -42,19 +39,33 @@ export const Show = () => {
     const taskCompleted = tasks.filter((task) => task.completed == true);
 
     const handleTaskComplete = (taskId) => {
-        setTasks((prevTasks) =>
-            prevTasks.map((task) =>
-                task.id === taskId ? { ...task, completed: !task.completed } : task
-            )
-        );
+        const storedTasks = localStorage.getItem("tasks");
+        if (storedTasks) {
+            let tasksArray = JSON.parse(storedTasks);
+            tasksArray = tasksArray.map(task => {
+                if (task.id == taskId) {
+                    task.completed = !task.completed;                    
+                }
+                return task;
+            });
+            setTasks(tasksArray)
+            localStorage.setItem("tasks", JSON.stringify(tasksArray));            
+        }     
     };
 
     const handleTaskDelete = (taskId) => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-    };
+        const storedTasks = localStorage.getItem("tasks");
+        if (storedTasks) {
+            let tasksArray = JSON.parse(storedTasks);
+            tasksArray = tasksArray.filter(task => task.id !== taskId);
+            setTasks(tasksArray)
+            localStorage.setItem("tasks", JSON.stringify(tasksArray));
+        };
+    }
 
     const handleTaskAdd = (newTask) => {
         setTasks((prevTasks) => [...prevTasks, newTask]);
+        localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), newTask]));
     };
 
     const handleTabChange = () => {
@@ -67,7 +78,7 @@ export const Show = () => {
                 <TabList>
                     <Tab
                         w='50%'
-                        borderTopLeftRadius='1rem'                        
+                        borderTopLeftRadius='1rem'
                         bg={!activeTab ? "purple.50" : "white"}
                         color={!activeTab ? "purple" : "#D6BCFA"}
                         onClick={handleTabChange}
@@ -109,7 +120,7 @@ export const Show = () => {
                 </TabList>
                 <TabPanels>
                     <TabPanel minH={"30rem"}>
-                        <Center marginBottom={isFormVisible? '4rem' : '1rem'}>
+                        <Center marginBottom={isFormVisible ? '4rem' : '1rem'}>
                             <TaskList
                                 tasks={tasks}
                                 onTaskComplete={handleTaskComplete}
@@ -118,7 +129,7 @@ export const Show = () => {
                         </Center>
                     </TabPanel>
                     <TabPanel minH={"30rem"}>
-                        <Center marginBottom={isFormVisible? '4rem' : '1rem'}>
+                        <Center marginBottom={isFormVisible ? '4rem' : '1rem'}>
                             <TaskList tasks={taskCompleted} onTaskDelete={handleTaskDelete} />
                         </Center>
                     </TabPanel>
@@ -139,7 +150,7 @@ export const Show = () => {
                             </Center>
                         )}
                         <Button
-                            colorScheme={isFormVisible? 'red' : 'green'}
+                            colorScheme={isFormVisible ? 'red' : 'green'}
                             borderRadius='3rem'
                             position='absolute'
                             width='6rem'
@@ -148,11 +159,11 @@ export const Show = () => {
                             textAlign='center'
                             fontSize='2.4rem'
                             onClick={handleButtonClick}>
-                            {isFormVisible? <i class="fa-solid fa-minus"></i> : <i className='fa-solid fa-plus'></i>}                            
+                            {isFormVisible ? <i className="fa-solid fa-minus"></i> : <i className='fa-solid fa-plus'></i>}
                         </Button>
                     </Box>
                 </TabPanels>
-            </Tabs>            
-        </HStack>        
+            </Tabs>
+        </HStack>
     );
 };

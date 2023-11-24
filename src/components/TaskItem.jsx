@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Text, Box, Button, Center } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
-    console.log(task);
+
+export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {    
 
     const [isCompleted, setIsCompleted] = useState(false);
 
@@ -46,7 +46,7 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
                                 bottom={0}
                                 left={1}
                             >
-                                <i class="fa-solid fa-check"></i>                            
+                                <i className="fa-solid fa-check"></i>                            
                             </Text>                   
                         </Box>
                     ) : (

@@ -1,5 +1,0 @@
-[
-    { "id": 1, "name": "Hacer las compras", "completed": false },
-    { "id": 2, "name": "Estudiar React", "completed": true },
-    { "id": 3, "name": "Ejercicio físico", "completed": false }
-]
