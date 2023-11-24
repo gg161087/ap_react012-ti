@@ -42,7 +42,7 @@ export const TaskForm = ({ onTaskAdd }) => {
 
     return (
         <form onSubmit={handleFormSubmit}>
-            <Input type="text" value={taskName} onChange={handleInputChange} variant='outline' placeholder='Add your task'  width="100px"/>
+            <Input type="text" value={taskName} onChange={handleInputChange} variant='outline' placeholder='Add your task' width="10rem" marginRight={'1rem'}/>
             <Button type="submit" colorScheme='teal' variant='solid'>Add Task</Button>
         </form>
     );

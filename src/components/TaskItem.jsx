@@ -32,13 +32,32 @@ export const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
                 >
                 <Button onClick={handleComplete} bg='none'>
                     {isCompleted ? (
-                        <Text  color='#B484C7' fontSize='1.6rem'>
-                            <i className='fa-regular fa-square-check'></i>
-                        </Text>                    
+                        <Box 
+                            border={'.1rem solid gray'}
+                            borderRadius={'.6rem'}                              
+                            width={'1.7rem'}
+                            height={'1.7rem'}
+                            position='relative'
+                        >
+                            <Text  
+                                color='#B484C7' 
+                                fontSize='1.7rem' 
+                                position='absolute'
+                                bottom={0}
+                                left={1}
+                            >
+                                <i class="fa-solid fa-check"></i>                            
+                            </Text>                   
+                        </Box>
                     ) : (
-                        <Text color='gray.400' fontSize='1.6rem'>
-                            <i className='fa-regular fa-square'></i>
-                        </Text>
+                        <Box
+                            border={'.1rem solid gray'}
+                            borderRadius={'.6rem'}                              
+                            width={'1.7rem'}
+                            height={'1.7rem'}
+                            position='relative'
+                        >                          
+                        </Box>
                     )}
                     <Text
                         color={isCompleted? 'gray.400' : 'black'}
