@@ -8,8 +8,9 @@ import {
   Heading,
   Text,
   Center,
+  Link as ChakraLink
 } from "@chakra-ui/react";
-import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from 'react-router-dom'
 
 export const About = () => {
   return (
@@ -132,6 +133,9 @@ export const About = () => {
             </Stack>
           </CardBody>
         </Card>
+      </Box>
+      <Box w='100%' p='2rem 0 2rem 0' display='flex' alignItems='center' justifyContent='center' bottom={0}>
+        <ReactRouterLink to='/'> Home</ReactRouterLink>               
       </Box>
     </VStack>
   );

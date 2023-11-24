@@ -10,7 +10,9 @@ import {
     TabPanels,
     TabPanel,
     TabList,
+    Link as ChakraLink
 } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from 'react-router-dom'
 
 import { TaskList } from "./../components/TaskList.jsx";
 import { TaskForm } from "./../components/TaskForm.jsx";
@@ -150,7 +152,7 @@ export const Show = () => {
                         </Button>
                     </Box>
                 </TabPanels>
-            </Tabs>
-        </HStack>
+            </Tabs>            
+        </HStack>        
     );
 };
