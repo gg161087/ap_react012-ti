@@ -17,5 +17,5 @@ body{
   flex-direction: column;
   justify-content: space-between;
   background: rgb(154,112,200);
-  background: linear-gradient(340deg, rgba(154,112,200,1) 33%, rgba(251,189,195,1) 100%);
+  background: linear-gradient(295deg, rgba(154,112,200,1) 33%, rgba(251,189,195,1) 100%);
 }
