@@ -145,7 +145,7 @@ export const Show = () => {
             position='relative'
             minH='3rem'>
             {isFormVisible && (
-              <Center position='absolute' bottom={"4rem"}>
+              <Center position='absolute' bottom={"2rem"}>
                 <Box
                   display='flex'
                   justifyContent='center'

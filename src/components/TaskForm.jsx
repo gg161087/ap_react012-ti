@@ -41,22 +41,27 @@ export const TaskForm = ({ onTaskAdd }) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      {/* Aca hay que hacer para que el input se quede sticky en el fondo, y agregar padding arriba */}
-      <Input
-        type='text'
-        value={taskName}
-        onChange={handleInputChange}
-        variant='outline'
-        placeholder='Add your task'
-        width='10rem'
-        marginRight={"1rem"}
-        bottom={"0px"}
-        maxLength={20} //! limite de 20 caracteres por tarea
-      />
-      <Button type='submit' colorScheme='teal' variant='solid'>
-        Add Task
-      </Button>
-    </form>
+    <Box
+      position='absolute'
+      bottom='0px'
+      pb={5}
+      backgroundColor='white'
+      width='225px'>
+      <form onSubmit={handleFormSubmit}>
+        <Input
+          type='text'
+          value={taskName}
+          onChange={handleInputChange}
+          variant='outline'
+          placeholder='Add your task'
+          width='10rem'
+          marginRight={"1rem"}
+          maxLength={20} //! limite de 20 caracteres por tarea
+        />
+        <Button type='submit' colorScheme='teal' variant='solid'>
+          Add Task
+        </Button>
+      </form>
+    </Box>
   );
 };
