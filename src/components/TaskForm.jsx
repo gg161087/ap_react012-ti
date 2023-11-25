@@ -43,10 +43,10 @@ export const TaskForm = ({ onTaskAdd }) => {
   return (
     <Box
       position='absolute'
-      bottom='0px'
+      bottom='5px'
       pb={5}
       backgroundColor='white'
-      width='225px'>
+      width='300px'>
       <form onSubmit={handleFormSubmit}>
         <Input
           type='text'
