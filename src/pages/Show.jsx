@@ -80,7 +80,7 @@ export const Show = () => {
 
   return (
     <HStack justifyContent='center'>
-      <Tabs variant='enclosed' w='25rem' bg='white' borderRadius={"1rem"}>
+      <Tabs variant='enclosed' w='30rem' bg='white' borderRadius={"1rem"}>
         <TabList>
           <Tab
             w='50%'

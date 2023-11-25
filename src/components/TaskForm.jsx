@@ -56,7 +56,7 @@ export const TaskForm = ({ onTaskAdd }) => {
           placeholder='Add your task'
           width='10rem'
           marginRight={"1rem"}
-          maxLength={20} //! limite de 20 caracteres por tarea
+          maxLength={30} //! limite de 30 caracteres por tarea
         />
         <Button type='submit' colorScheme='teal' variant='solid'>
           Add Task
