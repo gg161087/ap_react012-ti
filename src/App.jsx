@@ -12,10 +12,9 @@ export const App = () => {
         <BrowserRouter>
             <Header></Header>            
             <main>
-                <Routes>
-                    <Route index element={<Show/>}></Route>
-                    <Route path='/' element={<Show/>}></Route>
-                    <Route path='ap_react012-ti/about' element={<About/>}></Route>
+                <Routes>                    
+                    <Route path='/ap_react012-ti' element={<Show/>}></Route>
+                    <Route path='/ap_react012-ti/about' element={<About/>}></Route>
                 </Routes>
             </main>
             <Footer></Footer>           
