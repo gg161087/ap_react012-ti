@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     watch: {
-      usePolling: true,
+      usePolling: true,      
     },
   },
+  base: "/ap_react012-ti/"
 })
