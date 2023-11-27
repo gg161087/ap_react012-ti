@@ -13,8 +13,9 @@ export const App = () => {
             <Header></Header>            
             <main>
                 <Routes>
-                    <Route index path='/ap_react012-ti' element={<Show/>}></Route>
-                    <Route path='/about' element={<About/>}></Route>
+                    <Route index element={<Show/>}></Route>
+                    <Route path='/' element={<Show/>}></Route>
+                    <Route path='ap_react012-ti/about' element={<About/>}></Route>
                 </Routes>
             </main>
             <Footer></Footer>           
