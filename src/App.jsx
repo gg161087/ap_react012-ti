@@ -13,7 +13,7 @@ export const App = () => {
             <Header></Header>            
             <main>
                 <Routes>
-                    <Route index element={<Show/>}></Route>
+                    <Route index path='ap_react012-ti' element={<Show/>}></Route>
                     <Route path='about' element={<About/>}></Route>
                 </Routes>
             </main>
